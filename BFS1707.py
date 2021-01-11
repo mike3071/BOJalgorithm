@@ -4,6 +4,7 @@ def bfs(k):
     queue = deque()
     queue.append(k)
     color[k]=1
+    visited[k]=1
     while queue:
         out=queue.popleft()
         for i in graphshape[out]:
@@ -18,8 +19,8 @@ def bfs(k):
     for w in range(1,v+1):
         for q in graphshape[w]:
             if color[w]==color[q]:
-                return 1
-    return 0
+                return 'NO'
+    return 'YES'
     
     
 num = int(input())
@@ -32,13 +33,10 @@ for i in range(num):
         start, end = map(int, input().split())
         graphshape[start].append(end)
         graphshape[end].append(start)
-    ans = 0
-    for k in range(1, v+1):
-        if color[k]==0:
-            ans = bfs(k)
-            if ans == 1:
-                break
-    if ans ==0:
+    decision = []
+    for r in range(1,v+1):
+        decision.append(bfs(r))
+    if 'YES' in decision:
         print('YES')
     else:
         print('NO')
