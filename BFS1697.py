@@ -1,4 +1,5 @@
-/// 틀렸다는데 왜 틀렸는지 알 수가 없음... 직관적으로 감은 오는데 명백하게 설명이 불가
+'''
+틀렸다는데 왜 틀렸는지 알 수가 없음... 직관적으로 감은 오는데 명백하게 설명이 불가
 from collections import deque
 N, K = map(int, input().split())
 check = [0] * 100001
@@ -19,7 +20,7 @@ def bfs():
             q.append(v-1)
             check[v-1]=check[v]+1
 print(bfs())
-///
+'''
 
 from collections import deque
 N, K = map(int, input().split())
